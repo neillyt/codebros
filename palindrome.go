@@ -41,11 +41,10 @@ func isPalindromeHard(s string) bool {
 		beg--
 	}
 
-	for beg > -1 {
+	for ; beg > -1; beg-- {
 		if s[beg] != s[end] {
 			return false
 		}
-		beg--
 		end++
 	}
 	return true
@@ -60,11 +59,7 @@ func reverse(s string) string {
 }
 
 func isPalindromeEasy(s string) bool {
-	rev := reverse(s)
-	if s == rev {
-		return true
-	}
-	return false
+	return s == reverse(s)
 }
 
 func main() {
@@ -72,6 +67,8 @@ func main() {
 	flag.StringVar(&testString, "string", "hellolleh", "string to test if palindrome")
 	flag.Parse()
 	fmt.Printf("test string: %s\n", testString)
+	fmt.Printf("is palindrome hard: %t\n", isPalindromeHard(testString))
+	fmt.Printf("is paldindrome easy: %t\n", isPalindromeEasy(testString))
 	fmt.Printf("is palindrome hard: %t\n", isPalindromeHard(testString))
 	fmt.Printf("is paldindrome easy: %t\n", isPalindromeEasy(testString))
 }
