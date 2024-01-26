@@ -72,6 +72,6 @@ func main() {
 	flag.StringVar(&testString, "string", "hellolleh", "string to test if palindrome")
 	flag.Parse()
 	fmt.Printf("test string: %s\n", testString)
-	fmt.Printf("is palindrome hard: %v\n", isPalindromeHard(testString))
-	fmt.Printf("is paldindrome easy: %v\n", isPalindromeEasy(testString))
+	fmt.Printf("is palindrome hard: %t\n", isPalindromeHard(testString))
+	fmt.Printf("is paldindrome easy: %t\n", isPalindromeEasy(testString))
 }
